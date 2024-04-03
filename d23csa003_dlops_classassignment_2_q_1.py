@@ -15,7 +15,7 @@ import torch.optim as optim
 import matplotlib.pyplot as plt
 import numpy as np
 
-torch.manual_seed(42)
+torch.manual_seed(10) #Changed in version2
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 print(device)
 
@@ -105,7 +105,7 @@ def test(model, test_loader, writer, epoch):
     precision = precision_score(true_labels, predicted_labels, average='macro')
     recall = recall_score(true_labels, predicted_labels, average='macro')
     cm = confusion_matrix(true_labels, predicted_labels)
-    print(f'Testing Precision: {precision:.4f}, Recall: {recall:.4f}')
+    print(f'Testing Precision: {precision:.2f}, Recall: {recall:.2f}')  #Setting pricison to 2 in version2
     writer.add_scalar('Accuracy', accuracy, epoch)
     writer.add_scalar('Precision', precision, epoch)
     writer.add_scalar('Recall', recall, epoch)
