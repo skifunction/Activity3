@@ -19,9 +19,9 @@ torch.manual_seed(42)
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 print(device)
 
-batch_size = 64
-learning_rate = 0.001
-num_epochs = 10
+batch_size = 32  #Changed
+learning_rate = 0.0001  #Changed
+num_epochs = 20  #Changed
 
 import torchvision.transforms as transforms
 from torchvision.datasets import USPS
